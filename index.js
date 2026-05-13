@@ -37592,7 +37592,27 @@ class rM {
       }),
       (this.itemsAreMoving = !0),
       P.delayedCall(0.5, () => (this.itemsAreMoving = !1)),
-      this.updateNavigation());
+      this.updateNavigation(),
+      setTimeout(() => {
+          const videos = document.querySelectorAll('video[id^="video-"]');
+          videos.forEach(v => {
+              if (v.closest('.work-inactive-item-container')) {
+                  v.pause();
+                  v.muted = true;
+                  if (v.parentElement) {
+                      v.parentElement.classList.remove('unmuted-video-wrapper');
+                      v.parentElement.style.width = "";
+                      v.parentElement.style.height = "";
+                  }
+                  const card = v.closest('.work-item-container');
+                  if (card) card.classList.remove('overflow-visible');
+                  const unmuteText = document.getElementById('unmute-text-' + v.id.split('-')[1]);
+                  if(unmuteText) unmuteText.style.display = 'block';
+              } else {
+                  v.play().catch(err => console.log(err));
+              }
+          });
+      }, 50));
   }
   updateNavigation() {
     this.currentItemIndex == 0
@@ -37616,74 +37636,62 @@ class rM {
 const oM = [
     {
       id: 0,
-      name: "the iqic",
-      description: "Delivered a professional freelance project for a quality inspection company, creating a comprehensive business website",
-      image: "images/projects/theiqic.jpeg",
-      tags: ["javascript", "html", "css", "freelance"],
-      liveview: "https://theiqic.com/",
-      // github: "https://github.com/satvik9373/coffee-website-.git",
-      alt: "Coffee Shop Website",
+      name: "Graphic Designs",
+      description: "High-impact digital artwork, typography, and visual layouts tailored for major content creators and commercial brands.",
+      marqueeImages: [
+        "images/projects/design1.png",
+        "images/projects/design2.png",
+        "images/projects/design3.png",
+        "images/projects/design4.png"
+      ],
+      image: "images/projects/design1.png",
+      tags: ["Photoshop", "Illustrator", "Typography"],
+      liveview: "https://www.behance.net/gallery/183079081/STINT-RELIC-LOGO",
+      alt: "Graphic Designs Portfolio",
+      pageAnchor: "graphic",
     },
     {
       id: 1,
-      name: "venchers campaign",
-      description: "a block-based photo sharing system inspired by the historic Million Dollar Homepage concept",
-      image: "images/projects/krushigram.png",
-      tags: ["react", "express", "multer", "googleAuth","Cloudinery"],
-      liveview: "https://venchers-campaign.vercel.app/",
-      alt: "venchers campaign",
+      name: "Motion Graphics",
+      description: "Commercial Starbucks motion graphics featuring dynamic product visualization, floating coffee beans, and precise typography.",
+      video: "images/projects/motiongraphics.mp4",
+      tags: ["After Effects", "3D Motion", "Commercial"],
+      liveview: "#",
+      alt: "Motion Graphics",
+      pageAnchor: "motion",
     },
     {
       id: 2,
-      name: "vapor ui",
-      description: "UI component library featuring 20+ reusable components, text animations, background animations, loading page elements, and interactive UI element ",
-      image: "images/projects/vaporui.jpeg",
-      tags: ["javascript", "react", "ui","framer"],
-      liveview: "https://vapor-ui.vercel.app/",
-      // github: "https://github.com/satvik9373/yoga-class.git",
-      alt: "Fitness Institute",
+      name: "ShortForm Videos",
+      description: "Engaging and fast-paced short-form content tailored for TikTok, Instagram Reels, and YouTube Shorts.",
+      video: "images/projects/shortform.mp4",
+      tags: ["Premiere Pro", "After Effects", "CapCut"],
+      liveview: "#",
+      alt: "ShortForm Videos",
+      pageAnchor: "shortform",
     },
     {
       id: 3,
-      name: "Quick Labs",
-      description: "Quick labs is an LMS developed for teaching assistants at my university to provide lab solutions, manage materials, and support students.",
-      image: "images/projects/studybuddy.jpeg",
-      tags: ["javascript", "react", "mongodb", ""],
-      liveview: "http://quicklabs.fun/",
-      // github: "https://github.com/satvik9373/Think-Beyond-Marketing",
-      alt: "Digital Marketing Agency",
+      name: "LongForm Videos",
+      description: "High-retention, engaging long-form video editing for YouTube, featuring professional pacing, dynamic storytelling, and advanced color grading.",
+      video: "images/projects/longform.mp4",
+      tags: ["Premiere Pro", "After Effects", "Davinci Resolve"],
+      liveview: "#",
+      alt: "LongForm Videos",
+      pageAnchor: "longform",
     },
     {
       id: 4,
-      name: "Open Talk",
-      description: "Open Talk is a platform where people can share their achievements and hacks, allowing others to like or dislike them without needing an account.",
-      image: "images/projects/opentalk.jpeg",
-      tags: ["react", "mongodb", "express"],
-      liveview: "https://opentalk1.netlify.app/",
-      // github: "https://github.com/satvik9373/lms-websitee",
-      alt: "Affiliate Marketing and earning Website",
-    },
+      name: "3D Models",
+      description: "Advanced 3D organic models, glass refractions, and studio product renderings created with Blender and Octane.",
+      image: "images/projects/model3d.png",
+      tags: ["Blender", "Octane Render", "3D Art"],
+      liveview: "https://www.behance.net/kartiksingh15",
+      alt: "3D Models Portfolio",
+      pageAnchor: "models3d",
+    }
   ],
-  aM = {
-    html: '<div class="work-item-tag" style="background: white; border: 1px solid #7C8594; color: #7C8594">HTML</div>',
-    css: '<div class="work-item-tag" style="background: white; border: 1px solid #7C8594; color: #7C8594">CSS</div>',
-    javascript:
-      '<div class="work-item-tag" style="background: #FFB800;">JavaScript</div>',
-    react:
-      '<div class="work-item-tag" style="background: #21BAEB;">React js</div>',
-    mongodb:'<div class="work-item-tag" style="background: #4fe461;">MongoDB</div>',
-    googleAuth:'<div class="work-item-tag" style="background: #4fe461;">Google Auth</div>',
-    express:
-      '<div class="work-item-tag" style="background: #333;">Express</div>',
-    multer:
-      '<div class="work-item-tag" style="background:rgb(187, 93, 93);">Multer</div>',
-      Cloudinery: '<div class="work-item-tag" style="background:rgb(73, 143, 248);">Cloudinery</div>',
-      freelance: '<div class="work-item-tag" style="background:rgb(73, 143, 248);">Freelancs</div>',
-    ui: '<div class="work-item-tag" style="background: #CA49F8;">UI Design</div>',
-    tailwind: '<div class="work-item-tag" style="background:rgb(234, 248, 73);">Tailwind</div>',
-    game: '<div class="work-item-tag" style="background: #e86ef0;">Game</div>',
-    framer: '<div class="work-item-tag" style="background: #e86ef0;">Framer</div>',
-  };
+  aM = {};
 class lM {
   constructor() {
     he(this, "domElements", {
@@ -37697,19 +37705,43 @@ class lM {
   }
   renderItems() {
     this.items.forEach((e) => {
+      let mediaHtml = "";
+      if (e.marqueeImages) {
+          const groupHtml = e.marqueeImages.map(img => `<img src="${img}" alt="" />`).join('');
+          mediaHtml = `
+          <div class="media-wrapper">
+              ${e.liveview ? `<a href="${e.liveview}" target="_blank" class="graphic-design-marquee" style="text-decoration:none; height:100%; width:100%;">` : '<div class="graphic-design-marquee">'}
+                  <div class="marquee-track">
+                      <div class="marquee-group">${groupHtml}</div>
+                      <div class="marquee-group">${groupHtml}</div>
+                  </div>
+              ${e.liveview ? `</a>` : '</div>'}
+          </div>`;
+      } else if (e.video) {
+          mediaHtml = `
+          <div class="media-wrapper">
+              <video id="video-${e.id}" class="work-item-image" src="${e.video}" autoplay loop muted playsinline style="cursor: pointer; z-index: 10;"></video>
+              <div id="unmute-text-${e.id}" style="position: absolute; color: white; opacity: 0.8; font-weight: bold; pointer-events: none; text-shadow: 0 2px 5px rgba(0,0,0,0.8); z-index: 11; font-size: 14px; font-family: sans-serif; background: rgba(0,0,0,0.5); padding: 8px 16px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;">Click to Unmute</div>
+          </div>`;
+      } else {
+          mediaHtml = `
+          <div class="media-wrapper">
+              ${e.liveview ? `<a href="${e.liveview}" target="_blank" style="display:block; width:100%; height:100%; cursor:pointer;">` : ''}
+                  <img class="work-item-image" src="${e.image}" alt="${e.alt}" style="width:100%; height:100%; object-fit:cover;" />
+              ${e.liveview ? `</a>` : ''}
+          </div>`;
+      }
       this.domElements.renderContainer.insertAdjacentHTML(
         "beforeend",
         `
             <div id="work-item-${e.id}" class="work-item-container column">
-                <img class="work-item-image" src="${e.image}" alt="${
-          e.alt
-        }" height="300" width="334"/>
+                ${mediaHtml}
                 <div class="work-item-content-container">
                     <h3>${e.name}</h3>
                     <div class="work-item-tag-container row">
                         ${this.renderTags(e.tags)}
                     </div>
-                    <span>${e.description}</span>
+                    <span style="display:block; margin-top:10px;">${e.description}</span>
                 </div>
                 <div class="work-item-button-container row">
                     ${this.renderButtons(e)}
@@ -37779,7 +37811,7 @@ class lM {
         // Render only the "Live View" button if a live view link is present
         t = `
             <div id="work-item-orange-button-${e.id}" class="work-item-orange-button small-button center orange-hover" style="width: 100%; margin: 0;">
-                Live View
+                View all
             </div>
         `;
     } else if (e.twitter) {
@@ -37805,7 +37837,13 @@ class lM {
 
   renderTags(e) {
     let t = "";
-    for (let n = 0; n < e.length; n++) t += this.tags[e[n]];
+    for (let n = 0; n < e.length; n++) {
+        if (this.tags && this.tags[e[n]]) {
+            t += this.tags[e[n]];
+        } else {
+            t += `<div class="row center" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 4px 10px; margin-right: 8px; font-size: 12px; color: white; border: 1px solid rgba(255,255,255,0.2); margin-bottom: 5px;"><span style="margin-right: 5px;">#</span><span>${e[n]}</span></div>`;
+        }
+    }
     return t;
   }
   // addEventListenersToCard(e) {
@@ -37853,42 +37891,74 @@ class lM {
         }
     });
 
-    if (e.liveview) {
-        document
-            .getElementById("work-item-orange-button-" + e.id)
-            .addEventListener("click", () => {
-                window.open(e.liveview, "_blank").focus();
+    if (e.video) {
+        const v = document.getElementById("video-" + e.id);
+        const text = document.getElementById("unmute-text-" + e.id);
+        if (v && text) {
+            v.addEventListener("click", (evt) => {
+                evt.stopPropagation();
+                v.muted = !v.muted;
+                text.style.display = v.muted ? 'block' : 'none';
+                const wrapper = v.parentElement;
+                const card = wrapper ? wrapper.closest('.work-item-container') : null;
+                if (v.muted) {
+                    if (wrapper) {
+                        wrapper.classList.remove('unmuted-video-wrapper');
+                        wrapper.style.width = "";
+                        wrapper.style.height = "";
+                    }
+                    if (card) card.classList.remove('overflow-visible');
+                } else {
+                    if (wrapper) {
+                        wrapper.classList.add('unmuted-video-wrapper');
+                        const ratio = v.videoWidth / v.videoHeight;
+                        if (ratio > 1) {
+                            // Landscape videos: Wide aspect pop-out
+                            wrapper.style.width = "700px";
+                            wrapper.style.maxWidth = "90vw";
+                            wrapper.style.height = `${Math.min(window.innerWidth * 0.9, 700) / ratio}px`;
+                        } else {
+                            // Portrait or Square videos: Fill the vertical card height
+                            wrapper.style.width = "100%";
+                            wrapper.style.height = "100%";
+                        }
+                    }
+                    if (card) card.classList.add('overflow-visible');
+                }
             });
-    } else if (e.twitter) {
-        document
-            .getElementById("work-item-orange-button-" + e.id)
-            .addEventListener("click", () => {
-                window.open(e.twitter, "_blank").focus();
-            });
+        }
+    }
+
+    const orangeButton = document.getElementById("work-item-orange-button-" + e.id);
+    if (orangeButton) {
+        orangeButton.addEventListener("click", () => {
+            const anchor = e.pageAnchor || "";
+            window.location.href = `/work.html#${anchor}`;
+        });
     }
 }
 
 }
 const cM = [
   {
-    name: "web development",
+    name: "Graphic Design",
+    width: "95%",
+  },
+  {
+    name: "Video Editing",
     width: "90%",
   },
   {
-    name: "app devlopment",
-    width: "55%",
+    name: "Motion Graphics",
+    width: "85%",
   },
   {
-    name: "graphic design",
-    width: "90%",
-  },
-  {
-    name: "frontend",
+    name: "UI/UX Design",
     width: "80%",
   },
   {
-    name: "backend",
-    width: "75%",
+    name: "3D & Motion",
+    width: "60%",
   },
 ];
 class hM {

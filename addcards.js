@@ -1,68 +1,60 @@
 const oM = [
     {
       id: 0,
-      name: "Project Hub",
-      description: "Coffee Shop Website",
-      image: "images/projects/projecthub.png",
-      tags: ["javascript", "html", "css", "ui"],
-      liveview: "https://projecthubb.vercel.app/",
-      alt: "Coffee Shop Website",
+      name: "Graphic Designs",
+      description: "High-impact digital artwork, typography, and visual layouts tailored for major content creators and commercial brands.",
+      marqueeImages: [
+        "images/projects/design1.png",
+        "images/projects/design2.png",
+        "images/projects/design3.png",
+        "images/projects/design4.png"
+      ],
+      image: "images/projects/design1.png",
+      tags: ["Photoshop", "Illustrator", "Typography"],
+      liveview: "https://www.behance.net/gallery/183079081/STINT-RELIC-LOGO",
+      alt: "Graphic Designs Portfolio",
+      pageAnchor: "graphic",
     },
     {
       id: 1,
-      name: "krushigram",
-      description:
-        "Krushigram is an e-commerce platform for farmers, developed during a hackathon at DA-IICT.It aims to empower farmers through fair trade.",
-      image: "images/projects/krushigram.png",
-      tags: ["javascript", "html", "css", "ui"],
-      liveview: "https://krushigram.vercel.app/",
-      alt: "Coffee Shop Website",
+      name: "Motion Graphics",
+      description: "Commercial Starbucks motion graphics featuring dynamic product visualization, floating coffee beans, and precise typography.",
+      video: "images/projects/motiongraphics.mp4",
+      tags: ["After Effects", "3D Motion", "Commercial"],
+      liveview: "#",
+      alt: "Motion Graphics",
+      pageAnchor: "motion",
     },
     {
       id: 2,
-      name: "Study Buddy",
-      description: "LMS for teaching assistant",
-      image: "images/projects/studybuddy.jpeg",
-      tags: ["javascript", "react", "mongodb", "express"],
-      liveview: "https://studybuddyy.vercel.app/",
-      alt: "Digital Marketing Agency",
+      name: "ShortForm Videos",
+      description: "Engaging and fast-paced short-form content tailored for TikTok, Instagram Reels, and YouTube Shorts.",
+      video: "images/projects/shortform.mp4",
+      tags: ["Premiere Pro", "After Effects", "CapCut"],
+      liveview: "#",
+      alt: "ShortForm Videos",
+      pageAnchor: "shortform",
     },
     {
       id: 3,
-      name: "Open Talk",
-      description: "Affiliate Marketing and earning Website",
-      image: "images/projects/opentalk.jpeg",
-      tags: ["react", "mongodb", "express"],
-      liveview: "https://opentalk1.netlify.app/",
-      alt: "Affiliate Marketing and earning Website",
+      name: "LongForm Videos",
+      description: "High-retention, engaging long-form video editing for YouTube, featuring professional pacing, dynamic storytelling, and advanced color grading.",
+      video: "images/projects/longform.mp4",
+      tags: ["Premiere Pro", "After Effects", "Davinci Resolve"],
+      liveview: "#",
+      alt: "LongForm Videos",
+      pageAnchor: "longform",
     },
     {
       id: 4,
-      name: "Randomizer",
-      description: "Fitness Institute",
-      image: "images/projects/randomizer.jpg",
-      tags: ["html", "css", "javascript", "react", "game"],
-      liveview: "https://randomizerr.vercel.app/",
-      alt: "Fitness Institute",
-    },
-    {
-      id: 5,
-      name: "Crypto Tracker",
-      description: "A cryptocurrency tracking dashboard",
-      image: "images/projects/cryptotracker.png",
-      tags: ["react", "javascript", "api"],
-      liveview: "https://cryptotrackerr.vercel.app/",
-      alt: "Crypto Tracker Dashboard",
-    },
-    {
-      id: 6,
-      name: "Weather App",
-      description: "Real-time weather application",
-      image: "images/projects/weatherapp.png",
-      tags: ["javascript", "html", "css", "api"],
-      liveview: "https://weatherappp.vercel.app/",
-      alt: "Real-time Weather Application",
-    },
+      name: "3D Models",
+      description: "Advanced 3D organic models, glass refractions, and studio product renderings created with Blender and Octane.",
+      image: "images/projects/model3d.png",
+      tags: ["Blender", "Octane Render", "3D Art"],
+      liveview: "https://www.behance.net/kartiksingh15",
+      alt: "3D Models Portfolio",
+      pageAnchor: "models3d",
+    }
   ];
   
   class lM {
@@ -73,25 +65,31 @@ const oM = [
       (this.experience = new ye()),
         (this.sounds = this.experience.sounds),
         (this.items = oM),
-        (this.tags = aM),
+        (this.tags = typeof aM !== 'undefined' ? aM : {}),
         this.renderItems();
     }
   
     renderItems() {
       this.items.forEach((e) => {
+        
+        let mediaHtml = "";
+        if (e.video) {
+            mediaHtml = `<video class="work-item-image" src="${e.video}" autoplay loop muted playsinline style="height: 300px; width: 334px; object-fit: cover;"></video>`;
+        } else {
+            mediaHtml = `<img class="work-item-image" src="${e.image}" alt="${e.alt}" height="300" width="334" style="object-fit: cover;"/>`;
+        }
+
         this.domElements.renderContainer.insertAdjacentHTML(
           "beforeend",
           `
               <div id="work-item-${e.id}" class="work-item-container column">
-                  <img class="work-item-image" src="${e.image}" alt="${
-            e.alt
-          }" height="300" width="334"/>
+                  ${mediaHtml}
                   <div class="work-item-content-container">
                       <h3>${e.name}</h3>
                       <div class="work-item-tag-container row">
                           ${this.renderTags(e.tags)}
                       </div>
-                      <span>${e.description}</span>
+                      <span style="display:block; margin-top:10px;">${e.description}</span>
                   </div>
                   <div class="work-item-button-container row">
                       ${this.renderButtons(e)}
@@ -121,7 +119,6 @@ const oM = [
     }
   
     renderButtons(e) {
-      // Only the Live View button will be rendered if available
       let t = "";
       if (e.liveview) {
         t = `
@@ -130,8 +127,8 @@ const oM = [
           </div>`;
       } else {
         t = `
-          <div id="work-item-gray-button-${e.id}" class="work-item-gray-button center" style="width: 100%; background: #a7adb8; cursor: unset;">
-              Work in progress
+          <div id="work-item-gray-button-${e.id}" class="work-item-gray-button center" style="width: 100%; background: #a7adb8; cursor: unset; padding: 10px; border-radius: 4px; color: white; font-weight: bold;">
+              Available on request
           </div>`;
       }
       return t;
@@ -139,7 +136,14 @@ const oM = [
   
     renderTags(e) {
       let t = "";
-      for (let n = 0; n < e.length; n++) t += this.tags[e[n]];
+      for (let n = 0; n < e.length; n++) {
+        if (this.tags && this.tags[e[n]]) {
+            t += this.tags[e[n]];
+        } else {
+            // Provide a default styled tag
+            t += `<div class="row center" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 4px 10px; margin-right: 8px; font-size: 12px; color: white; border: 1px solid rgba(255,255,255,0.2);"><span style="margin-right: 5px;">#</span><span>${e[n]}</span></div>`;
+        }
+      }
       return t;
     }
   

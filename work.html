@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Showcase | Kartik Portfolio</title>
+    <meta name="description" content="Full visual showcase of my design, video editing, and 3D creations.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/head/favicon.ico">
+    <link rel="stylesheet" href="/work.css">
+</head>
+
+<body>
+    <!-- Ambiance Backgrounds -->
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="/index.html" class="logo-group">
+            <svg viewBox="0 0 56 61" xmlns="http://www.w3.org/2000/svg">
+                <path id="logo-path" d="M3 14 24 2C28 0 28 0 32 2L53 14C56 16 56 17 56 19L56 43C56 46 55 47 51 49L32 59C28 61 28 61 24 59L5 49C1 47 0 46 0 43L0 19C0 17 0 16 3 14M28 4 5 17 28 28 51 17 28 4M53 20 30 31 30 56 53 44 53 20M40 42 33 35C33 35 32 34 33 33 34 32 35 33 36 34L36 34 43 41C44 42 44 42 43 43L35 51C35 51 34 52 33 51 32 50 33 49 33 49L40 42M16 42 23 35C23 35 24 34 23 33 22 32 21 33 20 34L13 41C12 42 12 42 13 43L21 51C21 51 22 52 23 51 24 50 23 49 23 49L16 42"></path>
+            </svg>
+            <span class="logo-title">KARTIK</span>
+        </a>
+        
+        <a href="/index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="hero-section">
+        <span class="hero-tag">Curated Showcase</span>
+        <h1 class="hero-title">A Deep Dive Into My Work</h1>
+    </section>
+
+    <!-- Sticky Stacking Wrapper -->
+    <main class="stack-wrapper">
+
+        <!-- Card 1: ShortForm Videos -->
+        <article id="shortform" class="work-card">
+            <div class="card-info">
+                <span class="category-num">01 // EDITING</span>
+                <div class="category-meta">
+                    <h2 class="category-title">ShortForm Videos</h2>
+                    <p class="category-desc">Engaging, high-energy vertical content optimized for retention on TikTok, Instagram Reels, and YouTube Shorts. Click to expand and play!</p>
+                </div>
+            </div>
+            <div class="card-content">
+                <div id="shortform-scroller" class="horizontal-scroller">
+                    <!-- Dynamically Loaded -->
+                    <div class="card-loading"><i class="fas fa-spinner"></i></div>
+                </div>
+                <div class="scroller-hint">
+                    Scroll Right <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 2: LongForm Videos -->
+        <article id="longform" class="work-card">
+            <div class="card-info">
+                <span class="category-num">02 // EDITING</span>
+                <div class="category-meta">
+                    <h2 class="category-title">LongForm Videos</h2>
+                    <p class="category-desc">Professional pacing, cinematic color grading, and dynamic storytelling designed to keep viewers hooked. Click a tile to play in its native 16:9 cinematic ratio!</p>
+                </div>
+            </div>
+            <div class="card-content">
+                <div id="longform-scroller" class="horizontal-scroller">
+                    <!-- Dynamically Loaded -->
+                    <div class="card-loading"><i class="fas fa-spinner"></i></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 3: Motion Graphics -->
+        <article id="motion" class="work-card">
+            <div class="card-info">
+                <span class="category-num">03 // ANIMATION</span>
+                <div class="category-meta">
+                    <h2 class="category-title">Motion Graphics</h2>
+                    <p class="category-desc">Commercial-grade product visualizations, dynamic typography, and custom simulations. Click to expand and experience full motion fidelity.</p>
+                </div>
+            </div>
+            <div class="card-content">
+                <div id="motion-scroller" class="horizontal-scroller">
+                    <!-- Dynamically Loaded -->
+                    <div class="card-loading"><i class="fas fa-spinner"></i></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 4: Graphic Designs -->
+        <article id="graphic" class="work-card">
+            <div class="card-info">
+                <span class="category-num">04 // GRAPHICS</span>
+                <div class="category-meta">
+                    <h2 class="category-title">Graphic Designs</h2>
+                    <p class="category-desc">High-impact visual identities, high-CTR thumbnails, layouts, and customized digital compositions.</p>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="horizontal-scroller">
+                    <a href="https://www.behance.net/gallery/242672025/VEGAS-THUMBNAILS" target="_blank" class="gallery-item" style="text-decoration: none; color: inherit;">
+                        <img src="/images/projects/design1.png" alt="Graphic Design 1">
+                        <div class="item-overlay" style="opacity: 1;">
+                            <span class="item-tag">Vegas Concept</span>
+                            <h4 class="item-title">Vegas Thumbnails</h4>
+                        </div>
+                    </a>
+                    <a href="https://www.behance.net/gallery/183079081/STINT-RELIC-LOGO" target="_blank" class="gallery-item" style="text-decoration: none; color: inherit;">
+                        <img src="/images/projects/design2.png" alt="Graphic Design 2">
+                        <div class="item-overlay" style="opacity: 1;">
+                            <span class="item-tag">Branding</span>
+                            <h4 class="item-title">Stint Relic Logo</h4>
+                        </div>
+                    </a>
+                    <a href="https://www.behance.net/gallery/194526213/RECENT-WORK" target="_blank" class="gallery-item" style="text-decoration: none; color: inherit;">
+                        <img src="/images/projects/design3.png" alt="Graphic Design 3">
+                        <div class="item-overlay" style="opacity: 1;">
+                            <span class="item-tag">Portfolio</span>
+                            <h4 class="item-title">Recent Work</h4>
+                        </div>
+                    </a>
+                    <a href="https://www.behance.net/gallery/174362765/Food-delivery-app" target="_blank" class="gallery-item" style="text-decoration: none; color: inherit;">
+                        <img src="/images/projects/design5.png" alt="Food delivery App UI design">
+                        <div class="item-overlay" style="opacity: 1;">
+                            <span class="item-tag">UI/UX Design</span>
+                            <h4 class="item-title">Food Delivery App</h4>
+                        </div>
+                    </a>
+                    <a href="https://www.behance.net/gallery/242672245/RECENT-WORK" target="_blank" class="gallery-item" style="text-decoration: none; color: inherit;">
+                        <img src="/images/projects/design4.png" alt="Graphic Design 4">
+                        <div class="item-overlay" style="opacity: 1;">
+                            <span class="item-tag">Visual Flow</span>
+                            <h4 class="item-title">Recent Showcase</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 5: 3D Models -->
+        <article id="models3d" class="work-card">
+            <div class="card-info">
+                <span class="category-num">05 // 3D RENDER</span>
+                <div class="category-meta">
+                    <h2 class="category-title">3D Models</h2>
+                    <p class="category-desc">Advanced glass refractions, studio lighting rigs, and intricate polygonal sculpting rendered using Octane & Blender.</p>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="horizontal-scroller">
+                    <div class="gallery-item wide-item" style="flex: 0 0 550px;">
+                        <img src="/images/projects/model3d.png" alt="3D Model rendering">
+                        <div class="item-overlay">
+                            <span class="item-tag">Cinema 4D / Octane</span>
+                            <h4 class="item-title">Abstract Glass Structure</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-item" style="flex: 0 0 400px; background: #111;">
+                        <video muted loop playsinline autoplay style="opacity: 0.9;">
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-spinning-around-a-globe-of-glowing-lines-41823-large.mp4" type="video/mp4">
+                        </video>
+                        <div class="item-overlay" style="opacity: 1;">
+                            <span class="item-tag">Blender Cycles</span>
+                            <h4 class="item-title">Infinite Sphere Topology</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Interactive Automation & Dynamic API Engine -->
+    <script>
+        // 1. User-Provided Vimeo Portfolio IDs
+        const PORTFOLIO_CONFIG = {
+            shortform: {
+                ids: ["1191792627", "1191792461", "1191792218", "1191792197", "1191792196", "1191792214", "1191792091", "1191792186", "1191792320"],
+                tag: "Short Form Video",
+                scrollerId: "shortform-scroller",
+                defaultAspect: 9/16,
+                isPortrait: true
+            },
+            longform: {
+                ids: ["1191792290", "1191792232", "1191792287", "1191792502", "1191792549", "1191792260"],
+                tag: "YouTube / Longform",
+                scrollerId: "longform-scroller",
+                defaultAspect: 16/9,
+                isPortrait: false
+            },
+            motion: {
+                ids: ["1191792286", "1191792376", "1191792460", "1191792429", "1191792347"],
+                tag: "Motion Graphic",
+                scrollerId: "motion-scroller",
+                defaultAspect: 16/9,
+                isPortrait: false
+            }
+        };
+
+        // 2. Core Async Fetcher & Injector
+        async function loadCategoryVideos(key, config) {
+            const container = document.getElementById(config.scrollerId);
+            if (!container) return;
+
+            // Fetch all JSONs concurrently
+            const fetchPromises = config.ids.map(async (id, index) => {
+                try {
+                    const response = await fetch(`https://vimeo.com/api/v2/video/${id}.json`);
+                    const data = await response.json();
+                    const video = data[0];
+                    
+                    // Fallbacks if API misses keys
+                    const width = video.width || (config.isPortrait ? 1080 : 1920);
+                    const height = video.height || (config.isPortrait ? 1920 : 1080);
+                    
+                    return {
+                        id,
+                        title: video.title || `${config.tag} #${index + 1}`,
+                        thumbnail: video.thumbnail_large,
+                        aspectRatio: width / height,
+                        width,
+                        height
+                    };
+                } catch (err) {
+                    console.error(`Failed fetching Vimeo ${id}:`, err);
+                    return {
+                        id,
+                        title: `${config.tag} #${index + 1}`,
+                        thumbnail: `https://vimeocdn.com/`, // Fallback path
+                        aspectRatio: config.defaultAspect,
+                        width: config.isPortrait ? 1080 : 1920,
+                        height: config.isPortrait ? 1920 : 1080
+                    };
+                }
+            });
+
+            const results = await Promise.all(fetchPromises);
+
+            // Clear loader
+            container.innerHTML = '';
+
+            // Create and Append Cards
+            results.forEach(video => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.setAttribute('data-vimeo-id', video.id);
+                item.setAttribute('data-aspect', video.aspectRatio);
+                item.setAttribute('data-portrait', video.aspectRatio < 0.95);
+                item.style.flex = `0 0 300px`; // Uniform collapsed layout
+
+                item.innerHTML = `
+                    <div class="close-card"><i class="fas fa-times"></i></div>
+                    <img class="thumbnail-img" src="${video.thumbnail}" alt="${video.title}" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=60'">
+                    <div class="play-indicator"><i class="fas fa-play"></i></div>
+                    <div class="item-overlay">
+                        <span class="item-tag">${config.tag}</span>
+                        <h4 class="item-title">${video.title.split(' - ')[0]}</h4>
+                    </div>
+                `;
+
+                // Bind Interactive Expansion Mechanics
+                bindCardInteraction(item);
+                container.appendChild(item);
+            });
+        }
+
+        // 3. Card Click, Expand, and Embed Routing
+        function bindCardInteraction(card) {
+            card.addEventListener('click', (e) => {
+                // If they clicked close, handle shrink routing
+                if (e.target.closest('.close-card')) {
+                    e.stopPropagation();
+                    shrinkCard(card);
+                    return;
+                }
+
+                // If already expanded, do nothing
+                if (card.classList.contains('expanded')) return;
+
+                // First, shrink any OTHER expanded card in the same scroller track
+                const scroller = card.parentElement;
+                scroller.querySelectorAll('.gallery-item.expanded').forEach(other => shrinkCard(other));
+
+                // Trigger Expand Workflow
+                expandCard(card);
+            });
+        }
+
+        function expandCard(card) {
+            const vimeoId = card.getAttribute('data-vimeo-id');
+            const aspectRatio = parseFloat(card.getAttribute('data-aspect')) || 16/9;
+            const isPortrait = card.getAttribute('data-portrait') === 'true';
+
+            card.classList.add('expanded');
+            
+            // Calculate Dynamic Target Width based on fixed 450px Gallery height
+            let expandedWidth = Math.round(450 * aspectRatio);
+            
+            // Dynamically detect and constraint bounding limits by aspect ratio
+            const isActuallyPortrait = aspectRatio < 0.95;
+            
+            if (isActuallyPortrait) {
+                expandedWidth = Math.min(Math.max(expandedWidth, 260), 360); // Refined Portrait Bounds (e.g., 9:16)
+            } else {
+                expandedWidth = Math.min(Math.max(expandedWidth, 650), 900); // Standard Landscape Bounds (e.g., 16:9)
+            }
+
+            // Apply width smoothly via flex-basis
+            card.style.flex = `0 0 ${expandedWidth}px`;
+
+            // Inject Vimeo Interactive Embedded IFrame
+            // Optimized params: autopause=0, autoplay=1, byline=0, title=0
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://player.vimeo.com/video/${vimeoId}?autoplay=1&autopause=0&title=0&byline=0&portrait=0`;
+            iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', '');
+            
+            // Prepend to make sure it slides underneath Close but above cover
+            card.appendChild(iframe);
+
+            // Smoothly scroll the container to center this newly expanded element
+            setTimeout(() => {
+                card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }, 250);
+        }
+
+        function shrinkCard(card) {
+            card.classList.remove('expanded');
+            card.style.flex = `0 0 300px`;
+
+            // Destroy the iframe to stop audio playback instantly
+            const iframe = card.querySelector('iframe');
+            if (iframe) {
+                iframe.remove();
+            }
+        }
+
+
+
+        // Initialize Fetch Engine on Load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCategoryVideos('shortform', PORTFOLIO_CONFIG.shortform);
+            loadCategoryVideos('longform', PORTFOLIO_CONFIG.longform);
+            loadCategoryVideos('motion', PORTFOLIO_CONFIG.motion);
+        });
+    </script>
+</body>
+
+</html>
